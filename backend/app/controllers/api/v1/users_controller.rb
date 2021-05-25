@@ -5,7 +5,11 @@ class Api::V1::UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render json: @users, except: [:created_at, :updated_at, :password_digest], include: {
+      expenses: {
+      except: [:created_at, :updated_at, :user_id]
+      }
+    }
   end
 
   # GET /users/1
