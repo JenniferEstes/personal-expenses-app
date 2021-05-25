@@ -13,29 +13,17 @@ class UsersController < ApplicationController
   #   render json: @user
   # end
   #
-  # # POST /users
-  # def create
-  #   @user = User.new(user_params)
-  #
-  #   if @user.save
-  #     render json: @user, status: :created, location: @user
-  #   else
-  #     render json: @user.errors, status: :unprocessable_entity
-  #   end
-  # end
-  #
+  # POST /users
   def create
     user = User.new(user_params)
     user = User.find_by(:email => params[:email])
+    if user.save
+      render json: user, status: :created, location: uuser
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
+  end
 
-
-          if user.save
-              render :json => user, only: [:id, :email]
-          else
-              render :json => { errors: user.errors.full_messages }
-          end
-      end
-  #
   # # PATCH/PUT /users/1
   # def update
   #   if @user.update(user_params)
@@ -57,6 +45,6 @@ class UsersController < ApplicationController
   #   end
 
     def user_params
-      params.require(:user).permit(:email, :password_digest, :amount, :Expense)
+      params.require(:user).permit(:email, :password_digest)
     end
 end
