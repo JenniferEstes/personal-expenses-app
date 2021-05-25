@@ -2,15 +2,14 @@ class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
-  def index
-    @users = User.all
-
-    render json: @users, except: [:created_at, :updated_at, :password_digest], include: {
-      expenses: {
-      except: [:created_at, :updated_at, :user_id]
-      }
-    }
-  end
+  # def index
+  #   @users = User.all
+  #   render json: @users, except: [:created_at, :updated_at, :password_digest], include: {
+  #     expenses: {
+  #     except: [:created_at, :updated_at, :user_id]
+  #     }
+  #   }
+  # end
 
   # GET /users/1
   def show
