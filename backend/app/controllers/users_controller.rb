@@ -24,6 +24,18 @@ class UsersController < ApplicationController
   #   end
   # end
   #
+  def create
+    user = User.new(user_params)
+    user = User.find_by(:email => params[:email])
+
+
+          if user.save
+              render :json => user, only: [:id, :email]
+          else
+              render :json => { errors: user.errors.full_messages }
+          end
+      end
+  #
   # # PATCH/PUT /users/1
   # def update
   #   if @user.update(user_params)
@@ -43,9 +55,8 @@ class UsersController < ApplicationController
   #   def set_user
   #     @user = User.find(params[:id])
   #   end
-  #
-  #   # Only allow a list of trusted parameters through.
-  #   def user_params
-  #     params.require(:user).permit(:email, :password_digest, :amount, :Expense)
-  #   end
+
+    def user_params
+      params.require(:user).permit(:email, :password_digest, :amount, :Expense)
+    end
 end
