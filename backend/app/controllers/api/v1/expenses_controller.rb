@@ -5,7 +5,11 @@ class Api::V1::ExpensesController < ApplicationController
   def index
     @expenses = Expense.all
 
-    render json: @expenses
+    render json: @expenses, except: [:created_at, :updated_at, :user_id], include: {
+      users: {
+        except: [:created_at, :updated_at, :password_digest]
+      }
+    }
   end
 
   # GET /expenses/1
