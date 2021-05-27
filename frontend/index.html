@@ -7,8 +7,23 @@
     <title>Expenses</title>
 </head>
 <body>
-<h1>Expenses </h1>
-<ul id="expenses-container"></ul>
+    <header><h1>Personal Expenses</h1></header>
+    <div id="form-container">
+        <form action="/expenses" method="post">
+            <select id="users" name="users">
+                <option value="1">user_is_jenny</option>
+                <option value="2">user_is_william</option>
+                <option value="3">user_is_penelope</option>
+            </select><br>
+            <input type="date" class="form-control" id="autoSizingInput" name="expense[date]" placeholder=date><br />
+            <textarea class="form-control" id="autoSizingInput" name="expense[description]" placeholder=description></textarea><br />
+            <input type="float" class="form-control" id="autoSizingInput" name="expense[amount]" placeholder=amount><br />
+            <input type="submit" class="btn btn-outline-light" value="Create Expense"/><br>
+        </form>
+    </div>
+
+    <ul id="expenses-container"></ul>
 <script type="text/javascript" src="src/index.js"></script>
 </body>
 </html>
+
