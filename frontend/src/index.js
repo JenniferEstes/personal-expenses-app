@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () =>  {
     fetchExpenses()
+    const createExpenseForm = document.querySelector("#create-expense-form")
+    createExpenseForm.addEventListener("submit", (e) => createFormHandler(e))
 })
 
 function fetchExpenses() {
@@ -16,8 +18,13 @@ function fetchExpenses() {
             })
         })
     // .catch(err => console.warn(err))
-
 }
 
-// Sign up function
-// Sign in function
+function createFormHandler(e) {
+    e.preventDefault()
+    console.log(e)
+    const userInput = parseint(document.querySelector("#users").value)
+    const dateInput = document.querySelector("#date").value
+    const descriptionInput = document.querySelector("textarea").value
+    const amountInput = document.querySelector("#amount").value
+}
