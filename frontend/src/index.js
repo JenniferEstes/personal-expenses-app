@@ -23,8 +23,16 @@ function fetchExpenses() {
 function createFormHandler(e) {
     e.preventDefault()
     console.log(e)
-    const userInput = parseint(document.querySelector("#users").value)
+    const userId = parseInt(document.querySelector("#users").value)
     const dateInput = document.querySelector("#date").value
     const descriptionInput = document.querySelector("textarea").value
     const amountInput = document.querySelector("#amount").value
+    fetchExpensesPost(userId, dateInput, descriptionInput, amountInput)
 }
+
+function fetchExpensesPost(user_Id, dateInput, descriptionInput, amountInput) {
+console.log(user_Id, dateInput, descriptionInput, amountInput)
+
+
+}
+
