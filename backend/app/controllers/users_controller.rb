@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show]
+  before_action :find_user, only: [:show, :create]
 
-  # GET /users/1
-  def show
-    find_user
-    render json: @user
-  end
+  # # GET /users/1
+  # # def show
+  # #   find_user
+  # #   render json: @user
+  # # end
 
   # POST /users
   def create
@@ -18,13 +18,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # # DELETE /users/1
-  # def destroy
-  #   @user.destroy
-  # end
-
-  # private
-  #   # Use callbacks to share common setup or constraints between actions.
+  private
     def find_user
       @user = User.find_by_id(params[:id])
     end

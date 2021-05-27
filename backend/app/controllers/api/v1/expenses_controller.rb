@@ -20,11 +20,18 @@ class Api::V1::ExpensesController < ApplicationController
   # POST /expenses
   def create
     expense = Expense.new(expense_params)
-
-    if @expense.save
-      render json: expense, status: :created, location: expense
+    if expense.save
+      render json: {
+        #created
+        status: 201,
+        expense: expense
+      }
     else
-      render json: expense.errors, status: :unprocessable_entity
+      render json: {
+        #unprocessable entity
+        status: 422,
+        errors: expense.errors.full_messages.join(", ")
+      }, status: :unprocessable_entity
     end
   end
 
