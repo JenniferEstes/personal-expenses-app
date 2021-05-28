@@ -30,9 +30,24 @@ function createFormHandler(e) {
     fetchExpensesPost(userId, dateInput, descriptionInput, amountInput)
 }
 
-function fetchExpensesPost(user_Id, dateInput, descriptionInput, amountInput) {
-console.log(user_Id, dateInput, descriptionInput, amountInput)
-
-
+function fetchExpensesPost(user_id, date, description, amount) {
+    fetch("http://localhost:3000/api/v1/expenses", {
+        method: "post",
+        headers: {"Content-Type": "application/json"},
+        // send back this data to API
+        body: JSON.stringify({
+            user_id: user_id,
+            date: date,
+            description: description,
+            amount: amount
+        })
+    })
+        .then(resp => resp.json())
+        .then(data => {
+            data.forEach(expense => {
+                expensesContainer.innerHTML += `<li>${expense.date}</li>`
+                expensesContainer.innerHTML += `<li>${expense.description}</li>`
+                expensesContainer.innerHTML += `<li>${expense.amount}<br><button data-id=${expense.id}>Edit</button><br><br></li>`
+            })
+        })
 }
-
