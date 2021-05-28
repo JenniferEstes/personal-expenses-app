@@ -1,23 +1,20 @@
-document.addEventListener("DOMContentLoaded", () =>  {
+document.addEventListener("DOMContentLoaded", () => {
     fetchExpenses()
     const createExpenseForm = document.querySelector("#create-expense-form")
     createExpenseForm.addEventListener("submit", (e) => createFormHandler(e))
 })
+const expensesContainer = document.getElementById("expenses-container")
 
 function fetchExpenses() {
-    const expensesContainer = document.getElementById("expenses-container")
     // returns promise
     fetch("http://localhost:3000/api/v1/expenses")
         // capturing response, parsing it into json
         .then(resp => resp.json())
-        .then(data => {
-            data.forEach(expense => {
-                expensesContainer.innerHTML += `<li>${expense.date}</li>`
-                expensesContainer.innerHTML += `<li>${expense.description}</li>`
-                expensesContainer.innerHTML += `<li>${expense.amount}<br><button data-id=${expense.id}>Edit</button><br><br></li>`
+        .then(expense => {
+            expense.forEach(expense => {
+                renderData(expense)
             })
         })
-    // .catch(err => console.warn(err))
 }
 
 function createFormHandler(e) {
@@ -44,10 +41,13 @@ function fetchExpensesPost(user_id, date, description, amount) {
     })
         .then(resp => resp.json())
         .then(data => {
-            data.forEach(expense => {
-                expensesContainer.innerHTML += `<li>${expense.date}</li>`
-                expensesContainer.innerHTML += `<li>${expense.description}</li>`
-                expensesContainer.innerHTML += `<li>${expense.amount}<br><button data-id=${expense.id}>Edit</button><br><br></li>`
-            })
+            console.log(data)
+            renderData(data.expense)
         })
+}
+
+function renderData(expense) {
+    expensesContainer.innerHTML += `<li>${expense.date}</li>`
+    expensesContainer.innerHTML += `<li>${expense.description}</li>`
+    expensesContainer.innerHTML += `<li>${expense.amount}<br><button data-id=${expense.id}>Edit</button><br><br></li>`
 }
