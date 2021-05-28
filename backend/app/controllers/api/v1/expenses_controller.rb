@@ -1,5 +1,5 @@
 class Api::V1::ExpensesController < ApplicationController
-  before_action :set_expense, only: [:show, :update, :destroy]
+  # before_action :set_expense, only: [:show, :update, :destroy]
 
   # GET /expenses
   def index
@@ -22,13 +22,11 @@ class Api::V1::ExpensesController < ApplicationController
     expense = Expense.new(expense_params)
     if expense.save
       render json: {
-        #created
         status: 201,
         expense: expense
       }
     else
       render json: {
-        #unprocessable entity
         status: 422,
         errors: expense.errors.full_messages.join(", ")
       }, status: :unprocessable_entity
@@ -55,7 +53,7 @@ class Api::V1::ExpensesController < ApplicationController
     #   @expense = Expense.find(params[:id])
     # end
 
-     def expense_params
-      params.require(:expense).permit(:date, :description, :amount, :user_id)
-    end
+  def expense_params
+       params.require(:expense).permit(:date, :description, :amount, :user_id)
+  end
 end
