@@ -6,8 +6,13 @@ class Expense {
         this.amount = data.amount
         this.user = data.user
         Expense.all.push(this)
-        debugger
+    }
+
+    renderData() {
+        return
+        expensesContainer.innerHTML += `<li>${this.date}</li>`
+        expensesContainer.innerHTML += `<li>${this.description}</li>`
+        expensesContainer.innerHTML += `<li>${this.amount}<br><button data-id=${this.id}>Edit</button><br><br></li>`
     }
 }
-
-Expense.all = []
+    Expense.all = []
