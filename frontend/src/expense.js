@@ -1,3 +1,4 @@
+const expensesContainer = document.querySelector('#expenses-container')
 class Expense {
     constructor(data) {
         this.id = data.id
@@ -9,10 +10,10 @@ class Expense {
     }
 
     renderData() {
-        return
         expensesContainer.innerHTML += `<li>${this.date}</li>`
         expensesContainer.innerHTML += `<li>${this.description}</li>`
         expensesContainer.innerHTML += `<li>${this.amount}<br><button data-id=${this.id}>Edit</button><br><br></li>`
     }
 }
-    Expense.all = []
+
+Expense.all = []
