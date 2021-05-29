@@ -48,11 +48,6 @@ class Api::V1::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
-  def user_params
-    params.require(:user).permit(:email, :password_digest, :amount, :Expense)
-  end
-
   def user_params
     params.require(:user).permit(:email, :password_digest)
   end
