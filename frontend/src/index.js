@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const createExpenseForm = document.querySelector("#create-expense-form")
     createExpenseForm.addEventListener("submit", (e) => createFormHandler(e))
 })
-const expensesContainer = document.getElementById("expenses-container")
+// const expensesContainer = document.getElementById("expenses-container")
 
 function fetchExpenses() {
     // returns promise
@@ -12,8 +12,11 @@ function fetchExpenses() {
         .then(resp => resp.json())
         .then(expense => {
             expense.forEach(expense => {
-                renderData(expense)
+                // #create new instance of expense class
+                let newExpense = new Expense(expense)
+                newExpense.renderData()
             })
+                // .catch(err => console.log(err))
         })
 }
 
@@ -42,12 +45,8 @@ function fetchExpensesPost(user_id, date, description, amount) {
         .then(resp => resp.json())
         .then(data => {
             console.log(data)
-            renderData(data.expense)
-        })
-}
+            // let newExpense = new Expense(expense.data)
 
-function renderData(expense) {
-    expensesContainer.innerHTML += `<li>${expense.date}</li>`
-    expensesContainer.innerHTML += `<li>${expense.description}</li>`
-    expensesContainer.innerHTML += `<li>${expense.amount}<br><button data-id=${expense.id}>Edit</button><br><br></li>`
+            // renderData(data.expense)
+        })
 }
