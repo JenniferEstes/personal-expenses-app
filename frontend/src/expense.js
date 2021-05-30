@@ -2,6 +2,7 @@ const expensesContainer = document.querySelector('#expenses-container')
 
 class Expense {
     static all = []
+
     constructor(data) {
         this.id = data.id
         this.date = data.date
@@ -15,8 +16,10 @@ class Expense {
         expensesContainer.innerHTML += `<li>${this.date}</li>`
         expensesContainer.innerHTML += `<li>${this.description}</li>`
         expensesContainer.innerHTML += `<li>${this.amount}<br>
-            <button data-id=${this.id}>Edit</button>
+            <button data-id=${this.id} class="edit-budget button">Edit</button>
             <button data-id=${this.id}>Delete</button></li><br>`
     }
+
+
 }
 
