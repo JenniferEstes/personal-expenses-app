@@ -14,7 +14,7 @@ function fetchExpenses() {
             expense.forEach(expense => {
                 // #create new instance of expense class
                 let newExpense = new Expense(expense)
-                newExpense.renderData()
+                 newExpense.renderData()
             })
                 // .catch(err => console.log(err))
         })
