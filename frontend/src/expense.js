@@ -22,5 +22,9 @@ class Expense {
                                             <br>
                                         </ul>`
     }
-}
 
+    static destroy(id) {
+        const ul = document.querySelector(`ul[data-id="${id}"]`)
+        ul.remove()
+    }
+}
