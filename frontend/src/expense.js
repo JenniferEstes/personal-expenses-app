@@ -12,8 +12,11 @@ class Expense {
     renderData() {
         expensesContainer.innerHTML += `<li>${this.date}</li>`
         expensesContainer.innerHTML += `<li>${this.description}</li>`
-        expensesContainer.innerHTML += `<li>${this.amount}<br><button data-id=${this.id}>Edit</button><br><br></li>`
+        expensesContainer.innerHTML += `<li>${this.amount}<br>
+            <button data-id=${this.id}>Edit</button>
+            <button data-id=${this.id}>Delete</button></li><br>`
     }
 }
-
+// should this be static.all = []?
 Expense.all = []
+
