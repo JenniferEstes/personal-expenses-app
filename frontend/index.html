@@ -15,29 +15,30 @@
             <a class="navbar-brand" href="#">Personal Expenses App</a>
         </div>
     </nav>
-    <header></header>
-    <div id="form-container">
+<!--Sticky Bottom-->
+    <nav class="navbar fixed-bottom navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Personal Expenses App</a>
+        </div>
+    </nav>
+    <div id="expenses-container">
         <form id="create-expense-form">
             <label for="users"></label>
-                <select id="users" name="users">
+                <select id="users" class="form-select" name="users">
                     <option value="1">user_is_jenny</option>
                     <option value="2">user_is_william</option>
                     <option value="3">user_is_penelope</option>
                 </select><br>
+            </label>
+                <input type="date" class="form-control" id="autoSizingInput" name="expense[date]" placeholder="Date"><br>
+            <textarea type="string" class="form-control" id="autoSizingInput" name="expense[description]" placeholder="Description"></textarea><br>
             <label>
-                <input id="date" type="date" name="expense[date]" placeholder=date>
+                <input type="decimal" class="form-control" id="autoSizingInput" name="expense[amount]" placeholder="Amount"><br>
             </label><br>
-            <label>
-                <textarea id="description" name="expense[description]" placeholder=description></textarea>
-            </label><br>
-            <label>
-                <input id="amount" type="decimal" name="expense[amount]" placeholder=amount>
-            </label><br>
-                <input type="submit" value="Create Expense">
+                <input type="submit" class="btn btn-outline-light" value="Create Expense">
         </form>
     </div>
-
-    <ul id="expenses-container"></ul>
+<!--    <ul id="expenses-container"></ul>-->
     <div>
         <script type="text/javascript" src="src/index.js"></script>
         <script type="text/javascript" src="src/expense.js"></script>
