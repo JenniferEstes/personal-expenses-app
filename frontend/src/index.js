@@ -3,7 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const createExpenseForm = document.querySelector("#create-expense-form")
     createExpenseForm.addEventListener("submit", (e) => createFormHandler(e))
 })
-// const expensesContainer = document.getElementById("expenses-container")
+
+const expensesContainer = document.getElementById("expenses-container")
+
+expensesContainer.addEventListener('click', (e) => {
+    const id = e.target.parentElement.parentElement.dataset.id
+    const action = e.target.dataset.action
+
+    if (action === 'delete') {
+        deleteExpense(id)
+    }
+})
 
 function fetchExpenses() {
     // returns promise
@@ -21,7 +31,7 @@ function fetchExpenses() {
 }
 
 function deleteExpense(id) {
-    //
+    console.log('deleting', id)
 }
 
 function createFormHandler(e) {
