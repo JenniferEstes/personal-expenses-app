@@ -11,7 +11,7 @@ expensesContainer.addEventListener('click', (e) => {
     const action = e.target.dataset.action
 
     if (action === 'delete') {
-        deleteExpense(id)
+        Expense.destroy(id)
     }
 })
 
@@ -28,10 +28,6 @@ function fetchExpenses() {
             })
                 // .catch(err => console.log(err))
         })
-}
-
-function deleteExpense(id) {
-    console.log('deleting', id)
 }
 
 function createFormHandler(e) {
