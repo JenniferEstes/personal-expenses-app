@@ -2,3 +2,5 @@
 .idea/
 **/node_modules/
 backend/tmp/cache
+backend/tmp/
+backend/log/
