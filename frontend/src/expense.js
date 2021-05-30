@@ -16,8 +16,12 @@ class Expense {
         expensesContainer.innerHTML += `<li>${this.date}</li>`
         expensesContainer.innerHTML += `<li>${this.description}</li>`
         expensesContainer.innerHTML += `<li>${this.amount}<br>
-            <button data-id=${this.id} class="edit-budget button">Edit</button>
-            <button data-id=${this.id}>Delete</button></li><br>`
+            <button id="delete-expense-${this.id}" data-id=${this.id}>Delete</button></li><br>`
+
+        const deleteButton = document.querySelector(`#delete-expense-${this.id}`)
+        deleteButton.addEventListener('click', () => {
+            deleteExpense(this.id)
+        })
     }
 
 
