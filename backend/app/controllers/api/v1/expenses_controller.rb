@@ -1,5 +1,6 @@
 class Api::V1::ExpensesController < ApplicationController
-  # before_action :set_expense, only: [:show, :update, :destroy]
+  before_action :set_expense, only: [:update]
+  # :show, :destroy
 
   # GET /expenses
   def index
@@ -49,9 +50,8 @@ class Api::V1::ExpensesController < ApplicationController
   # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    # def set_expense
-    #   @expense = Expense.find(params[:id])
+    # def find_expense
+    #   expense = Expense.find_by_id(params[:id])
     # end
 
   def expense_params
