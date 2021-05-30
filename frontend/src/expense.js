@@ -19,6 +19,4 @@ class Expense {
             <button data-id=${this.id}>Delete</button></li><br>`
     }
 }
-// should this be static.all = []?
-statis.all = []
 
