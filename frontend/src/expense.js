@@ -1,5 +1,3 @@
-const expensesContainer = document.querySelector('#expenses-container')
-
 class Expense {
     static all = []
 
@@ -13,17 +11,16 @@ class Expense {
     }
 
     renderData() {
-        expensesContainer.innerHTML += `<li>${this.date}</li>`
-        expensesContainer.innerHTML += `<li>${this.description}</li>`
-        expensesContainer.innerHTML += `<li>${this.amount}<br>
-            <button id="delete-expense-${this.id}" data-id=${this.id}>Delete</button></li><br>`
-
-        const deleteButton = document.querySelector(`#delete-expense-${this.id}`)
-        deleteButton.addEventListener('click', () => {
-            deleteExpense(this.id)
-        })
+        expensesContainer.innerHTML += `<ul data-id=${this.id}>
+                                            <li>${this.date}</li>
+                                            <li>${this.description}</li>
+                                            <li>
+                                                ${this.amount}
+                                                <br>
+                                                <button data-action="delete">Delete</button>
+                                            </li>
+                                            <br>
+                                        </ul>`
     }
-
-
 }
 
