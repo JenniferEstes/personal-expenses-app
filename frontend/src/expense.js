@@ -1,5 +1,7 @@
 const expensesContainer = document.querySelector('#expenses-container')
+
 class Expense {
+    static all = []
     constructor(data) {
         this.id = data.id
         this.date = data.date
@@ -18,5 +20,5 @@ class Expense {
     }
 }
 // should this be static.all = []?
-Expense.all = []
+statis.all = []
 
