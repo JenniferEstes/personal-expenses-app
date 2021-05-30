@@ -35,19 +35,19 @@ class Api::V1::ExpensesController < ApplicationController
   end
 
   # PATCH/PUT /expenses/1
-  def update
-    expense = Expense.find_by_id(params[:id])
-    if expense.update(expense_params)
-      render json: expense
-    else
-      render json: expense.errors.full_messages.join(", ")
-    end
-  end
+  # def update
+  #   expense = Expense.find_by_id(params[:id])
+  #   if expense.update(expense_params)
+  #     render json: expense
+  #   else
+  #     render json: expense.errors.full_messages.join(", ")
+  #   end
+  # end
 
   # DELETE /expenses/1
-  # def destroy
-  #   @expense.destroy
-  # end
+  def destroy
+    expense.destroy
+  end
 
   private
     # def find_expense
