@@ -20,6 +20,10 @@ function fetchExpenses() {
         })
 }
 
+function deleteExpense(id) {
+    //
+}
+
 function createFormHandler(e) {
     e.preventDefault()
     console.log(e)
