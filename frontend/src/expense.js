@@ -10,16 +10,16 @@ class Expense {
     }
 
     renderData() {
-        expensesContainer.innerHTML += `<ul data-id=${this.id}>
-                                            <li>${this.date}</li>
-                                            <li>${this.description}</li>
-                                            <li>
-                                                ${this.amount}
-                                                <br>
-                                                <button data-action="delete">Delete</button>
-                                            </li>
-                                            <br>
-                                        </ul>`
+        expensesContainer.innerHTML += `
+            <div class="card mx-1 mb-2 col-4 h-auto" data-id="${this.id}">
+                <div class="card-body">
+                    <h2 class="card-title h5">${this.description}</h2>
+                    <h3 class="card-subtitle h6">${this.date}</h3>
+                    <p class="card-text">${this.amount}</p>
+                    <button class="btn btn-outline-danger btn-sm" data-action="delete">Delete</button>
+                </div>
+            </div> 
+                                          `
     }
 
     static destroy(id) {
@@ -31,8 +31,8 @@ class Expense {
                     console.log('Failed to delete Expense ' + id)
                     return
                 }
-                const ul = document.querySelector(`ul[data-id="${id}"]`)
-                ul.remove()
+                const card = document.querySelector(`div[data-id="${id}"]`)
+                card.remove()
             })
     }
 }
