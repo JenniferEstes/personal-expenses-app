@@ -55,9 +55,8 @@ function fetchExpensesPost(user_id, date, description, amount) {
     })
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
-            // let newExpense = new Expense(expense.data)
-
-            // renderData(data.expense)
+            const newExpense = new Expense(data.expense)
+            newExpense.renderData()
+            createExpenseForm.reset()
         })
 }
