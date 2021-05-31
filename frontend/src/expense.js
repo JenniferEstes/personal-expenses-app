@@ -26,10 +26,13 @@ class Expense {
         fetch(`http://localhost:3000/api/v1/expenses/${id}`, {
             method: 'DELETE'
         })
-            .then(console.log)
-
-
-        const ul = document.querySelector(`ul[data-id="${id}"]`)
-        ul.remove()
+            .then(res => {
+                if (res.status !== 200) {
+                    console.log('Failed to delete Expense ' + id)
+                    return
+                }
+                const ul = document.querySelector(`ul[data-id="${id}"]`)
+                ul.remove()
+            })
     }
 }
