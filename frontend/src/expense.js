@@ -6,7 +6,6 @@ class Expense {
         this.date = data.date
         this.description = data.description
         this.amount = data.amount
-        this.user = data.user
         Expense.all.push(this)
     }
 
