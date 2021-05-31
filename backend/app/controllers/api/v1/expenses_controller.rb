@@ -46,7 +46,12 @@ class Api::V1::ExpensesController < ApplicationController
 
   # DELETE /expenses/1
   def destroy
-    expense.destroy
+    expense = Expense.find_by_id(params[:id])
+    if expense.destroy
+      render json: { status: 200, expense: expense }
+    else
+      render json: { status: 500 }
+    end
   end
 
   private
