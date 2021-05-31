@@ -21,24 +21,23 @@
             <a class="navbar-brand" href="#">Personal Expenses App</a>
         </div>
     </nav>
-    <div id="expenses-container">
-        <form id="create-expense-form">
-            <label for="users"></label>
-                <select id="users" class="form-select" name="users">
-                    <option value="1">user_is_jenny</option>
-                    <option value="2">user_is_william</option>
-                    <option value="3">user_is_penelope</option>
-                </select><br>
-            </label>
-                <input type="date" class="form-control" id="autoSizingInput" name="expense[date]" placeholder="Date"><br>
-            <textarea type="string" class="form-control" id="autoSizingInput" name="expense[description]" placeholder="Description"></textarea><br>
-            <label>
-                <input type="decimal" class="form-control" id="autoSizingInput" name="expense[amount]" placeholder="Amount"><br>
-            </label><br>
-                <input type="submit" class="btn btn-outline-light" value="Create Expense">
-        </form>
-    </div>
-<!--    <ul id="expenses-container"></ul>-->
+<!--form-->
+    <form id="create-expense-form">
+        <label for="users"></label>
+        <select id="users" class="form-select" name="users">
+            <option value="1">user_is_jenny</option>
+            <option value="2">user_is_william</option>
+            <option value="3">user_is_penelope</option>
+        </select><br>
+        </label>
+        <input type="date" class="form-control" id="date" name="expense[date]" placeholder="Date"><br>
+        <textarea type="string" class="form-control" id="description" name="expense[description]" placeholder="Description"></textarea><br>
+        <label>
+            <input type="decimal" class="form-control" id="amount" name="expense[amount]" placeholder="Amount"><br>
+        </label><br>
+        <input type="submit" class="btn btn-outline-light" value="Create Expense">
+    </form>
+    <div id="expenses-container"></div>
     <div>
         <script type="text/javascript" src="src/index.js"></script>
         <script type="text/javascript" src="src/expense.js"></script>
