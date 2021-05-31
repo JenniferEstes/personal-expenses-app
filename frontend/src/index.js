@@ -2,7 +2,7 @@ const createExpenseForm = document.querySelector("#create-expense-form")
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchExpenses()
-    createExpenseForm.addEventListener("submit", createFormHandler)
+    createExpenseForm.addEventListener("submit", CreateExpenseForm.createFormHandler)
 })
 
 const expensesContainer = document.getElementById("expenses-container")
