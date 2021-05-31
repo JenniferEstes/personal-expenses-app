@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+# class SessionsController < ApplicationController
 
   # def new
   #   if logged_in?
@@ -18,4 +18,4 @@ class SessionsController < ApplicationController
   #   session.clear
   # end
 
-end
+# end
