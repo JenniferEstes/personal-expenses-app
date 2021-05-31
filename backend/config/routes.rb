@@ -3,7 +3,7 @@
   namespace :api do
     namespace :v1 do
       resources :users
-      resources :expenses, only: [:index, :create]
+      resources :expenses, only: [:index, :create, :destroy]
     end
   end
 end
