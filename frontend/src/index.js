@@ -31,17 +31,7 @@ function fetchExpenses() {
         })
 }
 
-function createFormHandler(e) {
-    e.preventDefault()
-    console.log(e)
-    const userId = parseInt(document.querySelector("#users").value)
-    const dateInput = document.querySelector("#date").value
-    const descriptionInput = document.querySelector("#description").value
-    const amountInput = document.querySelector("#amount").value
-    fetchExpensesPost(userId, dateInput, descriptionInput, amountInput)
-}
-
-function fetchExpensesPost(user_id, date, description, amount) {
+function fetchExpensesPost(form) {
     fetch("http://localhost:3000/api/v1/expenses", {
         method: "post",
         headers: {"Content-Type": "application/json"},
