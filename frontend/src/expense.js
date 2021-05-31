@@ -24,6 +24,12 @@ class Expense {
     }
 
     static destroy(id) {
+        fetch(`http://localhost:3000/api/v1/expenses/${id}`, {
+            method: 'DELETE'
+        })
+            .then(console.log)
+
+
         const ul = document.querySelector(`ul[data-id="${id}"]`)
         ul.remove()
     }
