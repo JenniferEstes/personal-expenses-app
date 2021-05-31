@@ -12,3 +12,8 @@ body {
     font-family: Sans-Serif;
     line-height: 18px;
     }
+
+form#create-expense-form {
+    width: 60%;
+    margin: auto;
+}
