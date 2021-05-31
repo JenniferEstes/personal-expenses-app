@@ -36,12 +36,7 @@ function fetchExpensesPost(form) {
         method: "post",
         headers: {"Content-Type": "application/json"},
         // send back this data to API
-        body: JSON.stringify({
-            user_id: user_id,
-            date: date,
-            description: description,
-            amount: amount
-        })
+        body: JSON.stringify(form)
     })
         .then(resp => resp.json())
         .then(data => {
