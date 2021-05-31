@@ -1,6 +1,6 @@
 class CreateExpenseForm {
     constructor() {
-        this.user = parseInt(document.querySelector("#users").value)
+        this.user_id = parseInt(document.querySelector("#users").value)
         this.date = document.querySelector("#date").value
         this.description = document.querySelector("#description").value
         this.amount = document.querySelector("#amount").value
