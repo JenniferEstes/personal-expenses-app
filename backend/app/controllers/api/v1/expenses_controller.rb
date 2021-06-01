@@ -1,6 +1,6 @@
 class Api::V1::ExpensesController < ApplicationController
-  before_action :set_expense, only: [:update]
-  # :show, :destroy
+  before_action :set_expense, only: [:destroy]
+  # :show, :update
 
   # GET /expenses
   def index
@@ -55,10 +55,6 @@ class Api::V1::ExpensesController < ApplicationController
   end
 
   private
-    # def find_expense
-    #   expense = Expense.find_by_id(params[:id])
-    # end
-
   def expense_params
        params.require(:expense).permit(:date, :description, :amount, :user_id)
   end
