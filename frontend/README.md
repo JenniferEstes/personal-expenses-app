@@ -9,7 +9,7 @@ View this [video](https://www.loom.com/share/7bc092c1fa1f450e84a1904bcb9175d0) f
 
 ## Install Instructions
 
-### Execute in a terminal
+### Open a terminal, navigate to the backend directory, and execute
 
                 bundle install
 
@@ -17,7 +17,7 @@ View this [video](https://www.loom.com/share/7bc092c1fa1f450e84a1904bcb9175d0) f
 
                 rails s
 
-### Execute in a second terminal
+### Open a second terminal, navigate to the frontend directory, and execute
                 live-server
 
 ### Copy from the second terminal and paste in your preferred browser
