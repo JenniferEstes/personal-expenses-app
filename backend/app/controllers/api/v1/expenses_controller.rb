@@ -8,7 +8,7 @@ class Api::V1::ExpensesController < ApplicationController
 
     render json: expenses, except: [:created_at, :updated_at, :user_id], include: {
       user: {
-        except: [:created_at, :updated_at, :password_digest]
+        except: [:created_at, :updated_at]
       }
     }
   end
