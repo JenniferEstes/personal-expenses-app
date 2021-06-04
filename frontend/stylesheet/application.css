@@ -16,4 +16,9 @@ body {
 form#create-expense-form {
     width: 60%;
     margin: auto;
-}
+    }
+
+select#users {
+    width: 60%;
+    margin: auto;
+    }
