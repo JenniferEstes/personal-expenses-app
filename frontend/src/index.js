@@ -1,16 +1,18 @@
 const createExpenseForm = document.querySelector("#create-expense-form")
+const userSelect = document.getElementById('users')
 
-document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener('DOMContentLoaded', () => {
     fetchExpenses()
-    createExpenseForm.addEventListener("submit", CreateExpenseForm.createFormHandler)
+    userSelect.addEventListener('change', User.userSelectHandler)
+    createExpenseForm.addEventListener('submit', ExpenseForm.createFormHandler)
 })
 
-const expensesContainer = document.getElementById("expenses-container")
+const expensesContainer = document.getElementById('expenses-container')
 
 expensesContainer.addEventListener('click', (e) => {
     const id = e.target.parentElement.parentElement.dataset.id
     const action = e.target.dataset.action
-
     if (action === 'delete') {
         Expense.destroy(id)
     }
@@ -18,7 +20,7 @@ expensesContainer.addEventListener('click', (e) => {
 
 function fetchExpenses() {
     // returns promise
-    fetch("http://localhost:3000/api/v1/expenses")
+    fetch('http://localhost:3000/api/v1/expenses')
         // capturing response, parsing it into json
         .then(resp => resp.json())
         .then(expense => {
@@ -32,9 +34,9 @@ function fetchExpenses() {
 }
 
 function fetchExpensesPost(form) {
-    fetch("http://localhost:3000/api/v1/expenses", {
-        method: "post",
-        headers: {"Content-Type": "application/json"},
+    fetch('http://localhost:3000/api/v1/expenses', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
         // send back this data to API
         body: JSON.stringify(form)
     })
