@@ -30,25 +30,22 @@
                     <option value="1">user_is_jenny</option>
                     <option value="2">user_is_william</option>
                     <option value="3">user_is_penelope</option>
-                </select><br>
-                </label>
-                <input type="date" class="form-control" id="date" name="expense[date]" placeholder="Date"><br>
-                <textarea type="string" class="form-control" id="description" name="expense[description]" placeholder="Description"></textarea><br>
-                <label>
-                    <input type="decimal" class="form-control" id="amount" name="expense[amount]" placeholder="Amount"><br>
-                </label><br>
-                <input type="submit" class="btn btn-outline-light" value="Create Expense">
-            </form>
+                </select>
+                <form id="create-expense-form">
+                    <input type="date" class="form-control" id="date" name="expense[date]" placeholder="Date"><br>
+                    <textarea type="string" class="form-control" id="description" name="expense[description]" placeholder="Description"></textarea><br>
+                    <label>
+                        <input type="decimal" class="form-control" id="amount" name="expense[amount]" placeholder="Amount"><br>
+                    </label><br>
+                    <input type="submit" class="btn btn-outline-light" value="Create Expense">
+                </form>
+            </div>
+            <div id="expenses-container" class="row col-6 pt-3"></div>
         </div>
-
-        <div id="expenses-container" class="row col-6 pt-3">
-
-        </div>
-    </div>
-        <script type="text/javascript" src="src/index.js"></script>
-        <script type="text/javascript" src="src/expense.js"></script>
-        <script type="text/javascript" src="src/createExpenseForm.js"></script>
-    </div>
-</body>
+            <script type="text/javascript" src="src/index.js"></script>
+            <script type="text/javascript" src="src/expense.js"></script>
+            <script type="text/javascript" src="src/user.js"></script>
+            <script type="text/javascript" src="src/expenseForm.js"></script>
+    </body>
 </html>
 
