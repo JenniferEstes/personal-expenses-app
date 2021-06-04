@@ -8,7 +8,6 @@ class ExpenseForm {
 
     static createFormHandler(e) {
         e.preventDefault()
-        console.log(e)
         const formData = new ExpenseForm()
         fetchExpensesPost(formData)
     }
