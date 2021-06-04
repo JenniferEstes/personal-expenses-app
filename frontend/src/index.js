@@ -19,17 +19,13 @@ expensesContainer.addEventListener('click', (e) => {
 })
 
 function fetchExpenses() {
-    // returns promise
     fetch('http://localhost:3000/api/v1/expenses')
-        // capturing response, parsing it into json
         .then(resp => resp.json())
         .then(expense => {
             expense.forEach(expense => {
-                // #create new instance of expense class
                 let newExpense = new Expense(expense)
                  newExpense.renderData()
             })
-                // .catch(err => console.log(err))
         })
 }
 
