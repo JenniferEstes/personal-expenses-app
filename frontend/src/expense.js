@@ -3,6 +3,7 @@ class Expense {
 
     constructor(data) {
         this.id = data.id
+        this.user_id = data.user.id
         this.date = data.date
         this.description = data.description
         this.amount = data.amount
@@ -19,7 +20,7 @@ class Expense {
                     <button class="btn btn-outline-danger btn-sm" data-action="delete">Delete</button>
                 </div>
             </div> 
-                                          `
+                                        `
     }
 
     static destroy(id) {
@@ -34,5 +35,9 @@ class Expense {
                 const card = document.querySelector(`div[data-id="${id}"]`)
                 card.remove()
             })
+    }
+
+    static getExpensesForUser(userId) {
+        return Expense.all.filter(exp => exp.user_id === userId)
     }
 }
