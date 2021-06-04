@@ -1,5 +1,5 @@
 class Api::V1::ExpensesController < ApplicationController
-  before_action :set_expense, only: [:destroy]
+  # before_action :set_expense, only: [:destroy]
   # :show, :update
 
   # GET /expenses
